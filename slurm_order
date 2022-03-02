@@ -1,0 +1,18 @@
+export PATH=~/miniconda3/bin:$PATH
+source activate mingyang
+cd pythonProject1
+sbatch slurm_start_t2g.sh
+sbatch slurm_start_g2t.sh
+sbatch slurm_start_sentence.sh
+sbatch slurm_start_subgraph.sh
+sbatch slurm_start.sh
+sbatch slurm_start_cpu_evaluation
+sbatch slurm_start_g2t_evaluation.sh
+sbatch slurm_start_t2g_evaluation.sh
+sbatch slurm_start_unified.sh
+sbatch slurm_start_g2t_direct.sh nvidia-smi  #
+sbatch slurm_start_t2g_direct.sh  #
+sbatch slurm_start_g2t_evaluation_direct.sh #
+sbatch slurm_start_t2g_evaluation_direct.sh #
+sbatch slurm_start_mask_evaluation.sh
+
