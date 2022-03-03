@@ -6,7 +6,7 @@
 #SBATCH --mail-type=ALL
 #SBATCH --partition=afkm
 #SBATCH --nodelist=gpu01
-#SBATCH --mem=64000
+#SBATCH --mem=32000
 
 
 # Add ICL-Slurm binaries to path
