@@ -1,6 +1,6 @@
 export PATH=~/miniconda3/bin:$PATH
 source activate mingyang
-cd pythonProject1
+cd Pretraining_AMR
 sbatch slurm_start_t2g.sh
 sbatch slurm_start_g2t.sh
 sbatch slurm_start_sentence.sh
