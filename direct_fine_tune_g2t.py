@@ -14,7 +14,7 @@ if __name__ == "__main__":
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(device)
      # Get the device
-    path = "/home/students/he/pythonProject1/training"
+    path = "/home/students/he/Pretraining_AMR/training"
     sentences,amr_sequences = open_dataset(path = path)
     print(amr_sequences[1])
     tokenizer = BartTokenizer.from_pretrained('facebook/bart-base') # load the bart model

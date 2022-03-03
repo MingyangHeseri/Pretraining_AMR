@@ -13,7 +13,7 @@ import penman
 if __name__ == "__main__":
     device = "cuda" if torch.cuda.is_available() else "cpu"
      # Get the device
-    path = "/home/students/he/pythonProject1/training"
+    path = "/home/students/he/Pretraining_AMR/training"
     sentences,amr_sequences = open_dataset(path = path)
     tokenizer = BartTokenizer.from_pretrained('facebook/bart-base') # load the bart model
     model = BartForConditionalGeneration.from_pretrained('facebook/bart-base')

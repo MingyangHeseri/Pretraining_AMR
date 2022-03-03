@@ -10,16 +10,18 @@ import penman
 if __name__ == "__main__":
     device = "cuda" if torch.cuda.is_available() else "cpu"
      # Get the device
-    path = "/home/students/he/pythonProject1/training"
+    path = "/home/students/he/Pretraining_AMR/training"
     sentences,amr_sequences = open_dataset(path = path)
     print(amr_sequences[1])
-    tokenizer = BartTokenizer.from_pretrained('facebook/bart-base') # load the bart model
-    model = BartForConditionalGeneration.from_pretrained('facebook/bart-base')
+    tokenizer = BartTokenizer.from_pretrained('/home/students/he/Pretraining_AMR/bart_model_sentence',local_files_only=True) # load the bart model
+    model = BartForConditionalGeneration.from_pretrained('/home/students/he/Pretraining_AMR/bart_model_sentence',local_files_only=True)
     vocab_dic = tokenizer.get_vocab()  # get the vocabulary of bart and make it a dictionary
-    all_amrs = " ".join(amr_sequences)
-    token_set = set(all_amrs.split())  # get the token to be added
+    # all_amrs = " ".join(amr_sequences)
+    # token_set = set(all_amrs.split())  # get the token to be added
+    with open("vocab.txt", "r") as outfile:
+        vocab_list = outfile.read().splitlines()
     token_to_add = []
-    for token in token_set:
+    for token in vocab_list:
         if token not in vocab_dic.keys():
             token_to_add.append(token.lower())
     tokenizer.add_tokens(token_to_add)  # add the token to the tokenizer
