@@ -5,8 +5,9 @@
 #SBATCH --mail-user=he@cl.uni-heidelberg.de
 #SBATCH --mail-type=ALL
 #SBATCH --partition=afkm
+#SBATCH --gres=gpu:1
 #SBATCH --nodelist=gpu01
-#SBATCH --mem=64000
+#SBATCH --mem=16000
 
 
 # Add ICL-Slurm binaries to path
