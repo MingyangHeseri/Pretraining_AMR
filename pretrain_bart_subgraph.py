@@ -11,9 +11,9 @@ import penman
 if __name__ == "__main__":
     device = "cuda" if torch.cuda.is_available() else "cpu"
      # Get the device
-    sentences,amr_sequences = open_dataset(path = "/home/students/he/pythonProject1/training")
-    tokenizer = BartTokenizer.from_pretrained('/home/students/he/pythonProject1/bart_model',local_files_only=True)
-    model = BartForConditionalGeneration.from_pretrained('/home/students/he/pythonProject1/bart_model',local_files_only=True)
+    sentences,amr_sequences = open_dataset(path = "/home/students/he/Pretraining_AMR/training")
+    tokenizer = BartTokenizer.from_pretrained('/home/students/he/Pretraining_AMR/bart_model',local_files_only=True)
+    model = BartForConditionalGeneration.from_pretrained('/home/students/he/Pretraining_AMR/bart_model',local_files_only=True)
     new_amr_list_masked = mask_subgraph(amr_sequences, masking_rate=0.15)
     amr_sequences = add_token(amr_sequences,sequence_type = "amr")
     new_amr_list_masked = add_token(new_amr_list_masked,sequence_type = "amr")

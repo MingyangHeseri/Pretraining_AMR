@@ -7,6 +7,7 @@
 #SBATCH --partition=afkm
 #SBATCH --nodelist=gpu01
 #SBATCH --mem=32000
+#SBATCH --gres=gpu:1
 
 
 # Add ICL-Slurm binaries to path

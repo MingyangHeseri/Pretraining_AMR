@@ -6,6 +6,7 @@
 #SBATCH --mail-type=ALL
 #SBATCH --partition=afkm
 #SBATCH --nodelist=gpu01
+#SBATCH --gres=gpu:1
 #SBATCH --mem=32000
 
 

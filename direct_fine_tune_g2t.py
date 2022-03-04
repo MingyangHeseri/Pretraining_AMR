@@ -47,8 +47,8 @@ if __name__ == "__main__":
         learning_rate = 3e-05,
         dataloader_pin_memory=False,
         per_device_train_batch_size=4,
-        num_train_epochs=20
-        #fp16 = True
+        num_train_epochs=5,
+        fp16 = True
     )
 
     trainer = Seq2SeqTrainer(

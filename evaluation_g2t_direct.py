@@ -14,8 +14,8 @@ if __name__ == "__main__":
     device = "cuda" if torch.cuda.is_available() else "cpu"
      # Get the device
     sentence_test,amr_sequences_test=open_dataset(path = "/home/students/he/pythonProject1/test")
-    tokenizer = BartTokenizer.from_pretrained('/home/students/he/pythonProject1/bart_model_direct_g2t',local_files_only=True)
-    model = BartForConditionalGeneration.from_pretrained('/home/students/he/pythonProject1/bart_model_direct_g2t',local_files_only=True)
+    tokenizer = BartTokenizer.from_pretrained('/home/students/he/Pretraining_AMR/bart_model_direct_g2t',local_files_only=True)
+    model = BartForConditionalGeneration.from_pretrained('/home/students/he/Pretraining_AMR/bart_model_direct_g2t',local_files_only=True)
     tokenizer1 = BartTokenizer.from_pretrained('facebook/bart-base')
     print("tokenizer_test")
 
