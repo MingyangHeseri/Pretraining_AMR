@@ -24,7 +24,7 @@ if __name__ == "__main__":
                        add_special_tokens=False).to(device)
     tokenizer_test1 = tokenizer1(text, return_tensors='pt', max_length=512, truncation=True, padding='max_length',
                        add_special_tokens=False).to(device)
-    print(tokenizer1.batch_decode(tokenizer_test["input_ids"], skip_special_tokens=True, clean_up_tokenization_spaces=True))
+    print(tokenizer1.batch_decode(tokenizer_test1["input_ids"], skip_special_tokens=True, clean_up_tokenization_spaces=True))
     print(tokenizer.batch_decode(tokenizer_test["input_ids"], skip_special_tokens=True, clean_up_tokenization_spaces=True))
 
 
