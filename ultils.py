@@ -210,7 +210,9 @@ def mask_sentence(tokenizer,sentences,masking_rate,device):
         )
     for i in range(inputs.input_ids.shape[0]):
         inputs.input_ids[i, selection[i]] = tokenizer.mask_token_id
+    print(tokenizer.mask_token_id)
     inputs["input_ids"] = inputs["input_ids"].to(device)
+    print(inputs["input_ids"])
     inputs["attention_mask"]=inputs["attention_mask"].to(device)
     inputs["labels"] = inputs["labels"].to(device)
     dataset = AMRDataset(inputs)
