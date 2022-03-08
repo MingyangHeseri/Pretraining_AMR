@@ -34,6 +34,7 @@ def mask_sentence_unified(tokenizer,sentences,masking_rate,device):
     inputs["attention_mask"]=inputs["attention_mask"].to(device)
     inputs["labels"] = inputs["labels"].to(device)
     decoded_inputs = tokenizer.batch_decode(inputs["input_ids"], clean_up_tokenization_spaces=False)
+    print(decoded_inputs)
     return decoded_inputs
 
 def unified_training(amr_squences,sentences,masking_rate,tokenizer,device):

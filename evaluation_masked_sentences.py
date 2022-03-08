@@ -26,11 +26,10 @@ if __name__ == "__main__":
     with torch.no_grad():
         for batch in loader:
             generated_ids = model.generate(input_ids = batch["input_ids"], attention_mask = batch['attention_mask'],num_beams=5,length_penalty = 1.0)
-            decoded_labels = tokenizer.batch_decode(batch["labels"], skip_special_tokens=True,
+            decoded_labels = tokenizer.batch_decode(batch["labels"],clean_up_tokenization_spaces=True)
+            input_sentence = tokenizer.batch_decode(batch["input_ids"],
                                                     clean_up_tokenization_spaces=True)
-            input_sentence = tokenizer.batch_decode(batch["input_ids"], skip_special_tokens=True,
-                                                    clean_up_tokenization_spaces=True)
-            sentences_decoded = tokenizer.batch_decode(generated_ids, skip_special_tokens=True,
+            sentences_decoded = tokenizer.batch_decode(generated_ids,
                                                        clean_up_tokenization_spaces=True)
             decoded_sentences.append(sentences_decoded)
             label_sentences.append(decoded_labels)
