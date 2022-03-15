@@ -12,9 +12,10 @@ sbatch slurm_start_t2g_evaluation.sh
 sbatch slurm_start_unified.sh
 sbatch slurm_start_g2t_direct.sh  #
 sbatch slurm_start_t2g_direct.sh  #
-sbatch slurm_start_g2t_evaluation_direct.sh #
+ #
 sbatch slurm_start_t2g_evaluation_direct.sh #
+sbatch slurm_start_g2t_evaluation_direct.sh #
 sbatch slurm_start_mask_evaluation.sh
 
 sbatch slurm_start_mask_sentence_evaluation.sh
-
+sbatch slurm_start_nvdia.sh

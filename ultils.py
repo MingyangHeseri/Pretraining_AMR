@@ -177,7 +177,7 @@ def open_dataset(path):
     return sentences, amr_sequences
 
 
-class AMRDataset(torch.utils.data.Dataset):  # turn them into dataset
+class AMRDataset(torch.utils.data.Dataset):  # turn them into dataset # here maybe a problem
     def __init__(self, encodings):
         self.encodings = encodings
 
